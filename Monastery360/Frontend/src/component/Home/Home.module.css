@@ -60,5 +60,10 @@ body {
     align-items: center;
 }
 
+.map{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
 
 

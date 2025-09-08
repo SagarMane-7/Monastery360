@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styles from './Home.module.css';
 import Button from "../Button/Button";
+import MapComponent from "../Map/Map";
 
 function Home() {
   
@@ -75,10 +76,16 @@ function Home() {
                 </div>
               );
             })}
-
           </div>
+          <Button style={{width:"293px"}}>View All Monasteries</Button>
         </div>
       </section>
+      <section>
+        <div className={styles.map}>
+          <MapComponent monasteries={monasteries} />
+        </div>
+      </section>
+
     </div>
   );
 }

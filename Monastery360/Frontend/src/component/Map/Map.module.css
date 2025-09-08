@@ -9,16 +9,9 @@ body {
     font-family: 'Karla', sans-serif;
 }
 
-
-.btn {
-  background-color: #cc6e2e; 
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  margin: 5px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 26px;
-  font-weight: 500; 
+.map{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 100px;
 }
-
