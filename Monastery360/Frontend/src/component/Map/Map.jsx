@@ -7,6 +7,8 @@ const containerStyle = {
   height: "500px",
 };
 
+
+
 function MapComponent({ monasteries }) {
   const defaultCenter = {
     lat: 27.532972,

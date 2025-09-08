@@ -4,7 +4,6 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Nunito', sans-serif;
     background-color: #FFFFFF;
     font-family: 'Karla', sans-serif;
 }
@@ -40,6 +39,7 @@ body {
 
 .information{
     text-align: center;
+    margin-bottom: 100px;
 }
 
 
@@ -63,7 +63,24 @@ body {
 .map{
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 }
 
+.timeline{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.calender{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 75px;
+}
 

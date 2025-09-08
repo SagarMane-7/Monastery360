@@ -4,7 +4,6 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Nunito', sans-serif;
     background-color: #FFFFFF;
     font-family: 'Karla', sans-serif;
 }
@@ -16,7 +15,7 @@ body {
   border: none;
   padding: 10px 20px;
   margin: 5px;
-  border-radius: 8px;
+  border-radius: 15px;
   cursor: pointer;
   font-size: 26px;
   font-weight: 500; 
