@@ -24,7 +24,7 @@ const Festival = () => {
       <Header />
 
       <section className={styles.images}>
-        <img src={`http://localhost:5000${festival.image}`} alt={festival.name} style={{ height: "400px", width: "100%" }} />
+        <img src={`http://localhost:5000${festival.image[0]}`} alt={festival.name} style={{ height: "400px", width: "100%" }} />
       </section>
 
       <section className={styles.information} style={{ textAlign: "center" }}>
@@ -42,9 +42,9 @@ const Festival = () => {
       </section>
 
       <section className={styles.images}>
-        <img src={`http://localhost:5000${festival.image}`} alt={festival.name} style={{ width: "400px", height: "200px" }} />
-        <img src={`http://localhost:5000${festival.image}`} alt={festival.name} style={{ width: "400px", height: "200px" }} />
-        <img src={`http://localhost:5000${festival.image}`} alt={festival.name} style={{ width: "400px", height: "200px" }} />
+       <img src={`http://localhost:5000${festival.image[1]}`} alt={festival.name} style={{ width: "400px", height: "200px" ,borderRadius:"15px" }} />
+        <img src={`http://localhost:5000${festival.image[2]}`} alt={festival.name} style={{ width: "400px", height: "200px" ,borderRadius:"15px"}} />
+        <img src={`http://localhost:5000${festival.image[3]}`} alt={festival.name} style={{ width: "400px", height: "200px" ,borderRadius:"15px" }} />
       </section>
 
       <section className={styles.rituals} style={{ textAlign: "center" }}>
@@ -55,9 +55,9 @@ const Festival = () => {
       </section>
 
       <section className={styles.images}>
-        <img src={`http://localhost:5000${festival.image}`} alt={festival.name} style={{ width: "400px", height: "200px" }} />
-        <img src={`http://localhost:5000${festival.image}`} alt={festival.name} style={{ width: "400px", height: "200px" }} />
-        <img src={`http://localhost:5000${festival.image}`} alt={festival.name} style={{ width: "400px", height: "200px" }} />
+        <img src={`http://localhost:5000${festival.image[4]}`} alt={festival.name} style={{ width: "400px", height: "200px" ,borderRadius:"15px" }} />
+        <img src={`http://localhost:5000${festival.image[5]}`} alt={festival.name} style={{ width: "400px", height: "200px" ,borderRadius:"15px" }} />
+        <img src={`http://localhost:5000${festival.image[6]}`} alt={festival.name} style={{ width: "400px", height: "200px"  ,borderRadius:"15px"}} />
       </section>
 
       <section className={styles.culture} style={{ textAlign: "center" }}>
