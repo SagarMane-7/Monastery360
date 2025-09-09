@@ -3,6 +3,7 @@ import Home from './component/Home/Home.jsx';
 import History from './component/History/History.jsx';
 import { List_of_Monasteries } from './component/List_of_Monasteries/List_of_Monasteries.jsx';
 import List_of_Festivals from './component/List_of_Festivals/List_of_Festivals.jsx';
+import Festival from './component/Festival/Festival.jsx';
 
 
 
@@ -10,10 +11,7 @@ import List_of_Festivals from './component/List_of_Festivals/List_of_Festivals.j
 function App() {
   return (
     <div>
-      <Home/>
-      <History/>
-      <List_of_Festivals/>
-      <List_of_Monasteries/>
+      <Festival/>
     </div>
   );
 }
