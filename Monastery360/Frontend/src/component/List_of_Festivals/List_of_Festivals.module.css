@@ -11,11 +11,9 @@ body {
     line-height: 150%;
 }
 
-.footer{
-    height: 250px;
-    color: #FFFFFF;
-    background-color: #cc6e2e;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+.background{
+    height: 425px;
+    background-image: url(/assets/Festival_Background.jpg);
+    background-size: cover;
+    margin-bottom: 50px;
 }

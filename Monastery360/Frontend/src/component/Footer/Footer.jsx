@@ -8,23 +8,30 @@ function Footer() {
   return (
     <div>
       <section className={styles.footer}>
-        <div style={{paddingTop:"75px"}}>
+        <div style={{ paddingTop: "75px" }}>
           <img src="/assets/sikkimtourism-logo 1.png" alt="Logo2" className={styles.logo2} he></img>
           <img src="/assets/sk-logo-lg 1.png" alt="Logo3" className={styles.logo3}></img>
         </div>
         <div>
-          <p>Contact Info</p>
+          <p style={{textAlign:"center"}}>Contact Info</p>
           <p>Email: info@monastery360.in</p>
           <p>Tourism Helpline: +91-xxxx-xxxx</p>
           <p>Address: Dept. of Tourism, Govt. of Sikkim</p>
         </div>
         <div>
-          <p>Social Media Links</p>
-         <FontAwesomeIcon icon={faFacebook} size="2x" />
-          <FontAwesomeIcon icon={faInstagram} size="2x" />
-          <FontAwesomeIcon icon={faTwitter} size="2x" />
+
+          <p style={{textAlign:"center"}}>Social Media Links</p>
+          <a href="https://m.facebook.com" target="_blank" style={{color:"#ffffff"}}>
+            <FontAwesomeIcon icon={faFacebook} size="2x" />
+          </a>
+          <a href="https://www.instagram.com/" target="_blank" style={{color:"#ffffff"}}>
+            <FontAwesomeIcon icon={faInstagram} size="2x" />
+          </a>
+
+          <a href="https://x.com/" target="_blank">
+            <FontAwesomeIcon icon={faTwitter} size="2x"  style={{color:"#ffffff"}}/>
+          </a>
         </div>
-        <p style={{paddingLeft:"425px"}}>© 2025 Monastery360 | Government of Sikkim | All Rights Reserved</p>
       </section>
     </div>
   );

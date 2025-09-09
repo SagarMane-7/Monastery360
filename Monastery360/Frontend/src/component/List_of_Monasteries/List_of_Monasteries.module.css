@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;500;700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #454545;
+    background-color: #FFFFFF;
+    font-family: 'Karla', sans-serif;
+    font-size: 22px;
+    line-height: 150%;
+}
+
+.background{
+    height: 525px;
+    background-image: url(/assets/listbackground.png);
+    background-size: cover;
+    margin-bottom: 50px;
+}
+
+.monastery{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+
+.monasterylist{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+}

@@ -18,7 +18,7 @@ function Home() {
 
 
   return (
-    
+
     <div>
       <Header />
       <section className={styles.background} >
@@ -63,27 +63,29 @@ function Home() {
       </section>
 
       <section className={styles.informationsection}>
-        <div  className={styles.information}>
-        <p style={{ color: "#008080", fontSize: "50px", fontWeight: "700" }}>The Land of Monasteries and Serenity</p>
-        <p style={{ color: "#454545", fontSize: "22px", fontWeight: "400" }}>Nestled in the lap of the Himalayas, Sikkim is home to some of the most sacred and picturesque monasteries in India. These timeless sanctuariesoffer more than just breathtaking views. They open the doors to spiritual awakening, inner peace, and cultural discovery.<br />Here, the fluttering of colorful prayer flags, the sound of monastic chants, and the aura of sacred silence create an atmosphere where serenity truly comes alive.<br /> ‘Seek serenity. Discover Sikkim’</p>
+        <div className={styles.information}>
+          <p style={{ color: "#008080", fontSize: "50px", fontWeight: "700" }}>The Land of Monasteries and Serenity</p>
+          <p style={{ color: "#454545", fontSize: "22px", fontWeight: "400" }}>Nestled in the lap of the Himalayas, Sikkim is home to some of the most sacred and picturesque monasteries in India. These timeless sanctuariesoffer more than just breathtaking views. They open the doors to spiritual awakening, inner peace, and cultural discovery.<br />Here, the fluttering of colorful prayer flags, the sound of monastic chants, and the aura of sacred silence create an atmosphere where serenity truly comes alive.<br /> ‘Seek serenity. Discover Sikkim’</p>
         </div>
       </section>
 
       <section className={styles.viewall}>
         <div className={styles.monastery}>
           <div className={styles.monasterylist}>
-            {monasteries.map((monastery) => {
-              const imageUrl = `http://localhost:5000${monastery.image}`;
+            {monasteries.slice(0, 4).map((monastery) => {
               return (
                 <div key={monastery.id} className={styles.monasteryCard}>
-                  <img src={imageUrl} alt={monastery.name} style={{ height: "300px", width: "300px",borderRadius: "15px"}} />
-                  <p style={{ fontSize: "22px", fontWeight: "700", color: "#454545" }}>{monastery.name}</p>
+                  <img src={monastery.image} alt={monastery.name} style={{ height: "300px", width: "300px", borderRadius: "15px" }} />
+                  <p style={{ fontSize: "22px", fontWeight: "700", color: "#008080" }}>{monastery.name}</p>
+                  <p style={{ fontSize: "22px", fontWeight: "400", color: "#454545" }}>{monastery.location}</p>
                 </div>
               );
             })}
           </div>
         </div>
-        <Button style={{ width: "293px", marginLeft: "625px", marginTop: "50px", fontFamily: "Karla,sans-serif" }}>View All Monasteries</Button>
+        <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}>
+          <Button style={{ width: "293px", marginTop: "50px", fontFamily: "Karla,sans-serif" }}>View All Monasteries</Button>
+        </div>
       </section>
       <section>
         <div className={styles.map}>

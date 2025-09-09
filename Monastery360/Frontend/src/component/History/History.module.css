@@ -30,16 +30,45 @@ body {
     
 }
 
-.legacy{
+.legacysection{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     text-align: center;
 }
 
-.timeline{
+.legacy{
+    width: 1300px;
+    text-align: center;
+}
+
+.fact{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    text-align: center;
+}
+
+.timeline1{
+    display: flex;
+    flex-wrap: wrap;
     align-items: center;
+    justify-content: end;
+    margin-right: calc(50% - 30px);
+    text-align: center;
+}
+
+.timeline2{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-left: calc(50% - 50px);
+    text-align: center;
+}
+
+.journey{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-bottom: 25px;
 }
