@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import Header from '../Header/Header.jsx';
+import Footer from '../Footer/Footer.jsx';
 import styles from './Home.module.css';
 import Button from "../Button/Button";
 import MapComponent from "../Map/Map";
@@ -16,8 +18,9 @@ function Home() {
 
 
   return (
-
+    
     <div>
+      <Header />
       <section className={styles.background} >
         <div className={styles.navbtn}>
           <Button style={{ background: "none", fontFamily: "Karla,sans-serif" }}>Discover</Button>
@@ -59,9 +62,11 @@ function Home() {
         </div>
       </section>
 
-      <section className={styles.information}>
+      <section className={styles.informationsection}>
+        <div  className={styles.information}>
         <p style={{ color: "#008080", fontSize: "50px", fontWeight: "700" }}>The Land of Monasteries and Serenity</p>
         <p style={{ color: "#454545", fontSize: "22px", fontWeight: "400" }}>Nestled in the lap of the Himalayas, Sikkim is home to some of the most sacred and picturesque monasteries in India. These timeless sanctuariesoffer more than just breathtaking views. They open the doors to spiritual awakening, inner peace, and cultural discovery.<br />Here, the fluttering of colorful prayer flags, the sound of monastic chants, and the aura of sacred silence create an atmosphere where serenity truly comes alive.<br /> ‘Seek serenity. Discover Sikkim’</p>
+        </div>
       </section>
 
       <section className={styles.viewall}>
@@ -111,6 +116,7 @@ function Home() {
           </div>
         </div>
       </section>
+      <Footer />
     </div>
   );
 }

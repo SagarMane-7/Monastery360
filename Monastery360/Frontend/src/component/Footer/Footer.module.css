@@ -4,12 +4,15 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    color: #454545;
     background-color: #FFFFFF;
     font-family: 'Karla', sans-serif;
+    font-size: 22px;
+    line-height: 150%;
 }
 
 .footer{
-    height: 250px;
+    height: 275px;
     color: #FFFFFF;
     background-color: #cc6e2e;
     display: flex;

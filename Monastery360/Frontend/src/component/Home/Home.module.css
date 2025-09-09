@@ -4,8 +4,11 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    color: #454545;
     background-color: #FFFFFF;
     font-family: 'Karla', sans-serif;
+    font-size: 22px;
+    line-height: 150%;
 }
 
 .background{
@@ -37,9 +40,17 @@ body {
     align-items: center;
 }
 
+.informationsection{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
 .information{
+    width: 1300px;
     text-align: center;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
 }
 
 
