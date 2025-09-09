@@ -11,7 +11,11 @@ import Festival from './component/Festival/Festival.jsx';
 function App() {
   return (
     <div>
+      <Home/>
+      <History/>
+      <List_of_Festivals/>
       <Festival/>
+      <List_of_Monasteries/>
     </div>
   );
 }

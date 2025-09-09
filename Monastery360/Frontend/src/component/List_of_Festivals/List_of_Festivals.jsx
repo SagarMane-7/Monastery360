@@ -30,7 +30,7 @@ const List_of_Festivals = () => {
                         {festivals.map((festival) => (
                             <div key={festival.id} className={styles.festivalCard}>
                                 <img
-                                    src={`http://localhost:5000${festival.image}`}
+                                    src={`http://localhost:5000${festival.image[0]}`}
                                     alt={festival.name}
                                     style={{ height: "300px", width: "400px", borderRadius: "15px" }}
                                 />
