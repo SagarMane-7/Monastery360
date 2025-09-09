@@ -12,8 +12,29 @@ body {
 }
 
 .background{
-    height: 425px;
+    height: 525px;
     background-image: url(/assets/Festival_Background.jpg);
     background-size: cover;
     margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.festival{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+
+.festivallist{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
 }

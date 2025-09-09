@@ -10,7 +10,10 @@ import List_of_Festivals from './component/List_of_Festivals/List_of_Festivals.j
 function App() {
   return (
     <div>
+      <Home/>
+      <History/>
       <List_of_Festivals/>
+      <List_of_Monasteries/>
     </div>
   );
 }
