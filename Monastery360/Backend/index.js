@@ -11,23 +11,153 @@ app.use('/assets', express.static('assets'));
 
 // Sample monastery data
 const monasteries = [
-  { id: 1, name: "Rumtek Monastery", image: "/assets/Monastery/Monastery1/monastery1_1.jpg", location: "Rumtek, Sikkim" },
-  { id: 2, name: "Pemayangtse Monastery", image: "/assets/Monastery/Monastery2/monastery2_1.jpg", location: "Pemayangtse, Sikkim" },
-  { id: 3, name: "Tashiding Monastery", image: "/assets/Monastery/Monastery3/monastery3_1.jpg", location: "Tashiding, Sikkim" },
-  { id: 4, name: "Phodang Monastery", image: "/assets/Monastery/Monastery4/monastery4_1.jpg", location: "Phodang, Sikkim" },
-  { id: 5, name: "Enchey Monastery", image: "/assets/Monastery/Monastery5/monastery5_1.webp", location: "Gangtok, Sikkim" },
-  { id: 6, name: "Dubdi Monastery", image: "/assets/Monastery/Monastery6/monastery6_1.jpg", location: "Yuksom, Sikkim" },
-  { id: 7, name: "Ralang Monastery", image: "/assets/Monastery/Monastery7/monastery7_1.jpg", location: "Ralang, Sikkim" },
-  { id: 8, name: "Sanga Choeling Monastery", image: "/assets/Monastery/Monastery8/monastery8_1.jpg", location: "Pelling, Sikkim" },
-  { id: 9, name: "Phensang Monastery", image: "/assets/Monastery/Monastery9/monastery9_1.jpg", location: "Phensang, Sikkim" },
-  { id: 10, name: "Lingdum Monastery", image: "/assets/Monastery/Monastery10/monastery10_1.jpg", location: "Ranka, Sikkim" },
-  { id: 11, name: "Tsomgo Monastery", image: "/assets/Monastery/Monastery11/monastery11_1.jpg", location: "Tsomgo Lake, Sikkim" },
-  { id: 12, name: "Zong Dog Palri Monastery", image: "/assets/Monastery/Monastery12/monastery12_1.jpg", location: "Ravangla, Sikkim" },
-  { id: 13, name: "Buddha Park of Ravangla", image: "/assets/Monastery/Monastery13/monastery13_1.jpg", location: "Phodong, Sikkim" },
-  { id: 14, name: "Namchi Monastery", image: "/assets/Monastery/Monastery14/monastery14_1.jpg", location: "Namchi, Sikkim" },
-  { id: 15, name: "Gurudongmar Monastery", image: "/assets/Monastery/Monastery15/monastery15_1.jpg", location: "North Sikkim" },
-  { id: 16, name: "Khecheopalri Monastery", image: "/assets/Monastery/Monastery16/monastery16_1.jpg", location: "Khecheopalri Lake, Sikkim" }
+  {
+    id: 1,
+    name: "Rumtek Monastery",
+    image: "/assets/Monastery/Monastery1/monastery1_1.jpg",
+    location: "Rumtek, Sikkim",
+    lat: "27.3333",
+    lng: "88.6111",
+    description: "Rumtek Monastery is the largest monastery in Sikkim and serves as an important center for Buddhist learning and practice."
+  },
+  {
+    id: 2,
+    name: "Pemayangtse Monastery",
+    image: "/assets/Monastery/Monastery2/monastery2_1.jpg",
+    location: "Pemayangtse, Sikkim",
+    lat: "27.3280",
+    lng: "88.2742",
+    description: "Pemayangtse is one of the oldest monasteries in Sikkim, known for its spiritual importance and stunning architecture."
+  },
+  {
+    id: 3,
+    name: "Tashiding Monastery",
+    image: "/assets/Monastery/Monastery3/monastery3_1.jpg",
+    location: "Tashiding, Sikkim",
+    lat: "27.3306",
+    lng: "88.3812",
+    description: "A sacred pilgrimage site, Tashiding Monastery is perched on a hill and offers panoramic views of the surrounding valleys."
+  },
+  {
+    id: 4,
+    name: "Phodang Monastery",
+    image: "/assets/Monastery/Monastery4/monastery4_1.jpg",
+    location: "Phodang, Sikkim",
+    lat: "27.2280",
+    lng: "88.5333",
+    description: "Phodang Monastery is a tranquil retreat with centuries-old traditions of meditation and prayer."
+  },
+  {
+    id: 5,
+    name: "Enchey Monastery",
+    image: "/assets/Monastery/Monastery5/monastery5_1.webp",
+    location: "Gangtok, Sikkim",
+    lat: "27.3388",
+    lng: "88.6065",
+    description: "Situated near Gangtok, Enchey Monastery is known for its spiritual rituals and beautiful murals."
+  },
+  {
+    id: 6,
+    name: "Dubdi Monastery",
+    image: "/assets/Monastery/Monastery6/monastery6_1.jpg",
+    location: "Yuksom, Sikkim",
+    lat: "27.3208",
+    lng: "88.4278",
+    description: "Dubdi Monastery is the oldest in Sikkim and offers insight into the earliest Buddhist practices in the region."
+  },
+  {
+    id: 7,
+    name: "Ralang Monastery",
+    image: "/assets/Monastery/Monastery7/monastery7_1.jpg",
+    location: "Ralang, Sikkim",
+    lat: "27.1500",
+    lng: "88.5500",
+    description: "Ralang Monastery is renowned for its vibrant festivals and peaceful environment."
+  },
+  {
+    id: 8,
+    name: "Sanga Choeling Monastery",
+    image: "/assets/Monastery/Monastery8/monastery8_1.jpg",
+    location: "Pelling, Sikkim",
+    lat: "27.2927",
+    lng: "88.2166",
+    description: "A hidden gem, Sanga Choeling is perched on a ridge and offers a serene spiritual atmosphere."
+  },
+  {
+    id: 9,
+    name: "Phensang Monastery",
+    image: "/assets/Monastery/Monastery9/monastery9_1.jpg",
+    location: "Phensang, Sikkim",
+    lat: "27.3300",
+    lng: "88.5300",
+    description: "Phensang Monastery is a quiet retreat, ideal for spiritual seekers and meditation."
+  },
+  {
+    id: 10,
+    name: "Lingdum Monastery",
+    image: "/assets/Monastery/Monastery10/monastery10_1.jpg",
+    location: "Ranka, Sikkim",
+    lat: "27.3400",
+    lng: "88.5700",
+    description: "Lingdum Monastery offers a blend of traditional Buddhist architecture and modern spiritual practices."
+  },
+  {
+    id: 11,
+    name: "Tsomgo Monastery",
+    image: "/assets/Monastery/Monastery11/monastery11_1.jpg",
+    location: "Tsomgo Lake, Sikkim",
+    lat: "27.5400",
+    lng: "88.8200",
+    description: "Located near the scenic Tsomgo Lake, this monastery is a hub for pilgrims and tourists alike."
+  },
+  {
+    id: 12,
+    name: "Zong Dog Palri Monastery",
+    image: "/assets/Monastery/Monastery12/monastery12_1.jpg",
+    location: "Ravangla, Sikkim",
+    lat: "27.1300",
+    lng: "88.4000",
+    description: "This monastery is a stunning example of Tibetan architecture, offering spiritual teachings and scenic beauty."
+  },
+  {
+    id: 13,
+    name: "Buddha Park of Ravangla",
+    image: "/assets/Monastery/Monastery13/monastery13_1.jpg",
+    location: "Phodong, Sikkim",
+    lat: "27.1000",
+    lng: "88.4300",
+    description: "A serene park housing a large statue of Buddha, surrounded by landscaped gardens and meditation spaces."
+  },
+  {
+    id: 14,
+    name: "Namchi Monastery",
+    image: "/assets/Monastery/Monastery14/monastery14_1.jpg",
+    location: "Namchi, Sikkim",
+    lat: "27.1500",
+    lng: "88.5300",
+    description: "Namchi Monastery is a spiritual retreat known for its peaceful ambiance and community involvement."
+  },
+  {
+    id: 15,
+    name: "Gurudongmar Monastery",
+    image: "/assets/Monastery/Monastery15/monastery15_1.jpg",
+    location: "North Sikkim",
+    lat: "27.9900",
+    lng: "88.5800",
+    description: "Located at a high altitude, Gurudongmar Monastery is revered for its spiritual sanctity and breathtaking views."
+  },
+  {
+    id: 16,
+    name: "Khecheopalri Monastery",
+    image: "/assets/Monastery/Monastery16/monastery16_1.jpg",
+    location: "Khecheopalri Lake, Sikkim",
+    lat: "27.2900",
+    lng: "88.5500",
+    description: "Famous for its sacred lake, this monastery attracts pilgrims who seek blessings and spiritual renewal."
+  }
 ];
+
+
 
 // Sample festival data
 const festivals = [
@@ -129,14 +259,73 @@ const festivals = [
 ];
 
 
+const volunteermonasteries = [
+  {
+    monasteryId: 1,
+    activities: "Teaching English, helping in library, assisting monks with IT basics.",
+    phone: "+91-359-222-XXXX",
+    email: "info@rumtek.org"
+  },
+  {
+    monasteryId: 2,
+    activities: "Preservation of murals, visitor guidance",
+    phone: "+91-359-222-YYYY",
+    email: "contact@pemayangtse.org"
+  },
+  {
+    monasteryId: 3,
+    activities: "Environmental cleanup, festival support",
+    phone: "+91-359-222-ZZZZ",
+    email: "info@tashiding.org"
+  },
+  {
+    monasteryId: 5,
+    activities: "Prayer hall arrangements, cultural event support",
+    phone: "+91-359-222-AAAA",
+    email: "contact@enchey.org"
+  }
+];
+
 
 app.get('/api/monasteries', (req, res) => {
   res.json(monasteries);
 });
 
+
 app.get('/api/festivals', (req, res) => {
-  res.json({ festivals: festivals });
+  res.json(festivals);
 });
+
+
+app.get('/api/festivals/:name', (req, res) => {
+  const { name } = req.params;
+  const festival = festivals.find(
+    f => f.name.toLowerCase() === decodeURIComponent(name).toLowerCase()
+  );
+
+  if (!festival) {
+    return res.status(404).json({ error: "Festival not found" });
+  }
+
+  res.json(festival);
+});
+
+
+app.get("/api/volunteer", (req, res) => {
+  const combined = volunteermonasteries.map((vol) => {
+    const monastery = monasteries.find((m) => m.id === vol.monasteryId);
+    return {
+      ...vol,
+      name: monastery?.name || "Unknown",
+      location: monastery?.location || "Unknown",
+      image: monastery?.image || "/assets/default.jpg",
+      description: monastery?.description || ""
+    };
+  });
+
+  res.json(combined);
+});
+
 
 
 app.listen(port, () => {

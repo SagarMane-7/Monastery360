@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 import styles from './History.module.css';
 import Header from '../Header/Header'
 import Footer from '../Footer/Footer'
@@ -71,8 +72,12 @@ const History = () => {
       <section>
         <p style={{ color: "#008080", fontWeight: "700", textAlign: "center", fontSize: "26px" }}>Continue Your Journey</p>
         <div className={styles.journey}>
-          <Button style={{ width: "293px", fontFamily: "Karla,sans-serif" }}>Explore Monasteries</Button>
-          <Button style={{ width: "300px", fontFamily: "Karla,sans-serif" }}>Learn About Festivals</Button>
+          <Link to='/monasteries'>
+            <Button style={{ width: "293px", fontFamily: "Karla,sans-serif" }}>Explore Monasteries</Button>
+          </Link>
+           <Link to='/festivals'>
+            <Button style={{ width: "300px", fontFamily: "Karla,sans-serif" }}>Learn About Festivals</Button>
+          </Link>
         </div>
       </section>
       <Footer />

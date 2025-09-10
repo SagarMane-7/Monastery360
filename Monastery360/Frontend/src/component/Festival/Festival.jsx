@@ -1,20 +1,21 @@
 import React, { useState, useEffect } from 'react';
+import { useParams } from "react-router-dom";
+import { Link } from 'react-router-dom';
 import Header from '../Header/Header.jsx';
 import Footer from '../Footer/Footer.jsx';
 import Button from '../Button/Button.jsx';
 import styles from '../Festival/Festival.module.css';
 
-const Festival = () => {
+function Festival() {
+  const { name } = useParams();
   const [festival, setFestival] = useState(null);
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/festivals")
-      .then((response) => response.json())
-      .then((data) => {
-        setFestival(data.festivals[0]); // Pick the first festival from the list
-      })
-      .catch((error) => console.error("Error fetching festival:", error));
-  }, []);
+    fetch(`http://localhost:5000/api/festivals/${encodeURIComponent(name)}`)
+      .then(res => res.json())
+      .then(data => setFestival(data))
+      .catch(err => console.error("Error fetching festival:", err));
+  }, [name]);
 
   if (!festival) {
     return <div>Loading...</div>;
@@ -70,7 +71,9 @@ const Festival = () => {
 
       <section>
         <div className={styles.morefestival}>
-          <Button style={{ width: "350px", fontFamily: "Karla,sans-serif" }}>Explore More Festivals</Button>
+          <Link to='/festivals'>
+            <Button style={{ width: "350px", fontFamily: "Karla,sans-serif" }}>Explore More Festivals</Button>
+          </Link>
         </div>
       </section>
 

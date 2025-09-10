@@ -13,7 +13,7 @@ body {
 
 .background{
     height: 525px;
-    background-image: url(/assets/Festival/Festival_Background.jpg);
+    background-image: url(/assets/Festival_Background.jpg);
     background-size: cover;
     margin-bottom: 50px;
     display: flex;
@@ -36,5 +36,5 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 60px;
+    gap:60px;
 }

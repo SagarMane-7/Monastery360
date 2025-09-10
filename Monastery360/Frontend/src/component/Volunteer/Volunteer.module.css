@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;500;700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #454545;
+    background-color: #FFFFFF;
+    font-family: 'Karla', sans-serif;
+    font-size: 22px;
+    line-height: 150%;
+}
+
+.background{
+    height: 400px;
+    background-image: url(/assets/volunteer.png);
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: end;
+    padding-bottom: 50px;
+}
+
+.volunteer{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin-top: 50px;
+}
+
+
+.volunteerlist{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap:50px;
+    margin-top: 25px;
+}

@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
+import { Link } from 'react-router-dom';
 import Header from '../Header/Header.jsx';
 import Footer from '../Footer/Footer.jsx';
 import styles from './Home.module.css';
 import Button from "../Button/Button";
-import MapComponent from "../Map/Map";
+import MapComponent from "../Map_API/Map_API.jsx";
 
 function Home() {
 
@@ -23,15 +24,25 @@ function Home() {
       <Header />
       <section className={styles.background} >
         <div className={styles.navbtn}>
-          <Button style={{ background: "none", fontFamily: "Karla,sans-serif" }}>Discover</Button>
+          <Link to='/monasteries'>
+            <Button style={{ background: "none", fontFamily: "Karla,sans-serif" }}>Discover</Button>
+          </Link>
           <h1 style={{ color: "#cc6e2e", fontFamily: "Karla,sans-serif" }}>|</h1>
-          <Button style={{ background: "none", fontFamily: "Karla,sans-serif" }}>Festivals</Button>
+           <Link to='/festivals'>
+            <Button style={{ background: "none", fontFamily: "Karla,sans-serif" }}>Festivals</Button>
+          </Link>
           <h1 style={{ color: "#cc6e2e" }}>|</h1>
-          <Button style={{ background: "none", fontFamily: "Karla,sans-serif" }}>Volunteer</Button>
+          <Link to='/volunteer'>
+            <Button style={{ background: "none", fontFamily: "Karla,sans-serif" }}>Volunteer</Button>
+          </Link>
           <h1 style={{ color: "#cc6e2e" }}>|</h1>
-          <Button style={{ background: "none", fontFamily: "Karla,sans-serif" }}>History</Button>
+          <Link to='/history'>
+            <Button style={{ background: "none", fontFamily: "Karla,sans-serif" }}>History</Button>
+          </Link>
           <h1 style={{ color: "#cc6e2e", fontFamily: "Karla,sans-serif" }}>|</h1>
-          <Button style={{ background: "none", fontFamily: "Karla,sans-serif" }}>Book Tour</Button>
+          <Link to='/book'>
+            <Button style={{ background: "none", fontFamily: "Karla,sans-serif" }}>Book Tour</Button>
+          </Link>
         </div>
       </section>
 
@@ -84,13 +95,17 @@ function Home() {
           </div>
         </div>
         <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}>
-          <Button style={{ width: "293px", marginTop: "50px", fontFamily: "Karla,sans-serif" }}>View All Monasteries</Button>
+          <Link to='/monasteries'>
+            <Button style={{ width: "293px", marginTop: "50px", fontFamily: "Karla,sans-serif" }}>View All Monasteries</Button>
+          </Link>
         </div>
       </section>
       <section>
         <div className={styles.map}>
           <MapComponent monasteries={monasteries} />
-          <Button style={{ fontFamily: "Karla,sans-serif" }} >Open Full Map</Button>
+          <Link to='/map'>       
+           <Button style={{ fontFamily: "Karla,sans-serif", marginTop:"50px" }} >Open Full Map</Button>
+           </Link>  
         </div>
       </section>
 

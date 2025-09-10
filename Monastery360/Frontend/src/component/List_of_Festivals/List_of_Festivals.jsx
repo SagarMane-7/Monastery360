@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import Header from '../Header/Header.jsx';
 import Footer from '../Footer/Footer.jsx';
 import styles from '../List_of_Festivals/List_of_Festivals.module.css'
@@ -10,7 +11,7 @@ const List_of_Festivals = () => {
     useEffect(() => {
         fetch("http://localhost:5000/api/festivals")
             .then((response) => response.json())
-            .then((data) => setFestivals(data.festivals))
+            .then((data) => setFestivals(data))
             .catch((error) => console.error("Error fetching festivals:", error));
     }, []);
 
@@ -29,11 +30,13 @@ const List_of_Festivals = () => {
                     <div className={styles.festivallist}>
                         {festivals.map((festival) => (
                             <div key={festival.id} className={styles.festivalCard}>
+                                <Link to={`/festivals/${encodeURIComponent(festival.name)}`}>
                                 <img
                                     src={`http://localhost:5000${festival.image[0]}`}
                                     alt={festival.name}
                                     style={{ height: "300px", width: "400px", borderRadius: "15px" }}
                                 />
+                                </Link>
                                 <p style={{ fontSize: "22px", fontWeight: "700", color: "#008080" }}>
                                     {festival.name}
                                 </p>

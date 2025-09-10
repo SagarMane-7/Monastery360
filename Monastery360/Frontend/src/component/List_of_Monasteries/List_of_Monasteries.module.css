@@ -13,7 +13,7 @@ body {
 
 .background{
     height: 475px;
-    background-image: url(/assets/Monastery/listbackground.png);
+    background-image: url(/assets/listbackground.png);
     background-size: cover;
     margin-bottom: 50px;
     display: flex;

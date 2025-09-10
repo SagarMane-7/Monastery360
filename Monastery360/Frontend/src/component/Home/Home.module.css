@@ -53,8 +53,6 @@ body {
     margin-bottom: 50px;
 }
 
-
-
 .monastery{
     display: flex;
     flex-wrap: wrap;
@@ -77,6 +75,7 @@ body {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    margin-top: 50px;
 }
 
 .timeline{
