@@ -20,8 +20,8 @@ export const List_of_Monasteries = () => {
             <Header />
             <section className={styles.background}>
                 <div style={{ width: "855px", textAlign: 'center', paddingLeft: "25px" }}>
-                    <p style={{ fontSize: "50px", color: "#008080", fontWeight: "700", paddingTop: "25px" }}>Explore Monasteries in Sikkim</p>
-                    <p style={{ fontSize: "22px", color: "#008080", fontStyle: "italic", fontWeight: "500" }}>Experience centuries of tradition, explore spiritual heritage, and contribute through volunteering at every monastery</p>
+                    <p style={{ fontSize: "50px", color: "#008080", fontWeight: "700"}}>Explore Monasteries in Sikkim</p>
+                    <p style={{ fontSize: "22px", color: "#454545", fontStyle: "italic", fontWeight: "500" ,paddingBottom:"150px"}}>Experience centuries of tradition, explore spiritual heritage, and contribute through volunteering at every monastery</p>
                 </div>
             </section>
             <section>

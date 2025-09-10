@@ -11,22 +11,22 @@ app.use('/assets', express.static('assets'));
 
 // Sample monastery data
 const monasteries = [
-  { id: 1, name: "Rumtek Monastery", image: "/assets/monastery1.jpg", location: "Rumtek, Sikkim" },
-  { id: 2, name: "Pemayangtse Monastery", image: "/assets/monastery2.jpg", location: "Pemayangtse, Sikkim" },
-  { id: 3, name: "Tashiding Monastery", image: "/assets/monastery3.jpg", location: "Tashiding, Sikkim" },
-  { id: 4, name: "Phodang Monastery", image: "/assets/monastery4.jpg", location: "Phodang, Sikkim" },
-  { id: 5, name: "Enchey Monastery", image: "/assets/monastery5.webp", location: "Gangtok, Sikkim" },
-  { id: 6, name: "Dubdi Monastery", image: "/assets/monastery6.jpg", location: "Yuksom, Sikkim" },
-  { id: 7, name: "Ralang Monastery", image: "/assets/monastery7.jpg", location: "Ralang, Sikkim" },
-  { id: 8, name: "Sanga Choeling Monastery", image: "/assets/monastery8.jpg", location: "Pelling, Sikkim" },
-  { id: 9, name: "Phensang Monastery", image: "/assets/monastery9.jpg", location: "Phensang, Sikkim" },
-  { id: 10, name: "Lingdum Monastery", image: "/assets/monastery10.jpg", location: "Ranka, Sikkim" },
-  { id: 11, name: "Tsomgo Monastery", image: "/assets/monastery12.jpg", location: "Tsomgo Lake, Sikkim" },
-  { id: 12, name: "Zong Dog Palri Monastery", image: "/assets/monastery11.jpg", location: "Ravangla, Sikkim" },
-  { id: 13, name: "Buddha Park of Ravangla", image: "/assets/monastery13.jpg", location: "Phodong, Sikkim" },
-  { id: 14, name: "Namchi Monastery", image: "/assets/monastery14.jpg", location: "Namchi, Sikkim" },
-  { id: 15, name: "Gurudongmar Monastery", image: "/assets/monastery15.jpg", location: "North Sikkim" },
-  { id: 16, name: "Khecheopalri Monastery", image: "/assets/monastery16.jpg", location: "Khecheopalri Lake, Sikkim" }
+  { id: 1, name: "Rumtek Monastery", image: "/assets/Monastery/Monastery1/monastery1_1.jpg", location: "Rumtek, Sikkim" },
+  { id: 2, name: "Pemayangtse Monastery", image: "/assets/Monastery/Monastery2/monastery2_1.jpg", location: "Pemayangtse, Sikkim" },
+  { id: 3, name: "Tashiding Monastery", image: "/assets/Monastery/Monastery3/monastery3_1.jpg", location: "Tashiding, Sikkim" },
+  { id: 4, name: "Phodang Monastery", image: "/assets/Monastery/Monastery4/monastery4_1.jpg", location: "Phodang, Sikkim" },
+  { id: 5, name: "Enchey Monastery", image: "/assets/Monastery/Monastery5/monastery5_1.webp", location: "Gangtok, Sikkim" },
+  { id: 6, name: "Dubdi Monastery", image: "/assets/Monastery/Monastery6/monastery6_1.jpg", location: "Yuksom, Sikkim" },
+  { id: 7, name: "Ralang Monastery", image: "/assets/Monastery/Monastery7/monastery7_1.jpg", location: "Ralang, Sikkim" },
+  { id: 8, name: "Sanga Choeling Monastery", image: "/assets/Monastery/Monastery8/monastery8_1.jpg", location: "Pelling, Sikkim" },
+  { id: 9, name: "Phensang Monastery", image: "/assets/Monastery/Monastery9/monastery9_1.jpg", location: "Phensang, Sikkim" },
+  { id: 10, name: "Lingdum Monastery", image: "/assets/Monastery/Monastery10/monastery10_1.jpg", location: "Ranka, Sikkim" },
+  { id: 11, name: "Tsomgo Monastery", image: "/assets/Monastery/Monastery11/monastery11_1.jpg", location: "Tsomgo Lake, Sikkim" },
+  { id: 12, name: "Zong Dog Palri Monastery", image: "/assets/Monastery/Monastery12/monastery12_1.jpg", location: "Ravangla, Sikkim" },
+  { id: 13, name: "Buddha Park of Ravangla", image: "/assets/Monastery/Monastery13/monastery13_1.jpg", location: "Phodong, Sikkim" },
+  { id: 14, name: "Namchi Monastery", image: "/assets/Monastery/Monastery14/monastery14_1.jpg", location: "Namchi, Sikkim" },
+  { id: 15, name: "Gurudongmar Monastery", image: "/assets/Monastery/Monastery15/monastery15_1.jpg", location: "North Sikkim" },
+  { id: 16, name: "Khecheopalri Monastery", image: "/assets/Monastery/Monastery16/monastery16_1.jpg", location: "Khecheopalri Lake, Sikkim" }
 ];
 
 // Sample festival data
@@ -35,7 +35,7 @@ const festivals = [
     id: 1,
     name: "Pang Lhabsol",
     description: "Pang Lhabsol is a sacred festival celebrated exclusively in Sikkim, honoring Mount Kanchenjunga, the guardian deity of the region. It is a vibrant occasion blending spirituality, folklore, and community traditions, attracting locals and visitors alike. The festival lasts several days and showcases dances, prayers, and rituals that symbolize protection and prosperity.",
-    image: ["/assets/festival1_1.jpg","/assets/festival1_2.jpg","/assets/festival1_3.jpg","/assets/festival1_4.jpg","/assets/festival1_5.jpg","/assets/festival1_6.jpg","/assets/festival1_7.jpg"],
+    image: ["/assets/Festival/Festival_1/festival1_1.webp","/assets/Festival/Festival_1/festival1_2.jpg","/assets/Festival/Festival_1/festival1_3.jpg","/assets/Festival/Festival_1/festival1_4.jpg","/assets/Festival/Festival_1/festival1_5.jpg","/assets/Festival/Festival_1/festival1_6.jpg","/assets/Festival/Festival_1/festival1_7.jpg"],
     history_origins: "Pang Lhabsol originated in the 13th century during the reign of the third Chogyal of Sikkim, who established the festival to venerate Mount Kanchenjunga. The mountain was considered a protective deity, safeguarding the people and land. Over centuries, the festival evolved, blending Buddhist teachings, local animist traditions, and folk customs. Its history reflects the deep interconnection between the Sikkimese people, their rulers, and their natural surroundings. The festival also symbolizes the preservation of local folklore, transmitting ancient myths and legends from one generation to the next. Through Pang Lhabsol, the people of Sikkim maintain spiritual continuity while strengthening cultural identity and respect for nature.",
     rituals_practices: [
       "Warrior Dance depicting ancient battles and heroic legends, performed by young men wearing traditional attire and symbolic weapons.",
@@ -50,7 +50,7 @@ const festivals = [
     id: 2,
     name: "Losar Festival",
     description: "Losar marks the Tibetan New Year, celebrated with elaborate prayers, feasts, and cultural performances. The festival symbolizes new beginnings, spiritual cleansing, and communal harmony, offering a chance to reflect on the past year and embrace the future. It spans several days and showcases rituals unique to Tibetan Buddhist traditions.",
-     image: ["/assets/festival1_1.jpg","/assets/festival1_2.jpg","/assets/festival1_3.jpg","/assets/festival1_4.jpg","/assets/festival1_5.jpg","/assets/festival1_6.jpg","/assets/festival1_7.jpg"],
+    image: ["/assets/Festival/Festival_2/festival2_1.jpg"],
     history_origins: "Losar was introduced by Tibetan settlers and has been celebrated for centuries. Its origins lie in both spiritual and agricultural cycles, aligning with the lunar calendar to mark seasonal renewal. The festival historically emphasized purification rituals, prayers for protection, and community solidarity. Monasteries played a central role, organizing ceremonies and teaching moral and spiritual lessons. Over time, Losar adapted to local Sikkimese customs while retaining core Tibetan traditions. The festival reflects the integration of Buddhism with regional culture, preserving sacred texts, chants, and ritual arts. It also illustrates how festivals served as social anchors, reinforcing hierarchies, moral codes, and communal responsibilities across generations.",
     rituals_practices: [
       "Thorough cleaning of homes and monasteries to remove negativity and welcome prosperity and positive energy into the new year.",
@@ -66,7 +66,7 @@ const festivals = [
     id: 3,
     name: "Saga Dawa",
     description: "Saga Dawa is a sacred Buddhist festival celebrating the birth, enlightenment, and passing of Lord Buddha. Observed on the full moon of the fourth lunar month, it attracts devotees from Sikkim and neighboring regions, providing opportunities for deep spiritual reflection, meditation, and merit-making.",
-    image: ["/assets/festival1_1.jpg","/assets/festival1_2.jpg","/assets/festival1_3.jpg","/assets/festival1_4.jpg","/assets/festival1_5.jpg","/assets/festival1_6.jpg","/assets/festival1_7.jpg"],
+    image: ["/assets/Festival/Festival_3/festival3_1.jpg"],
     history_origins: "Saga Dawa has roots in ancient Buddhist traditions and is closely aligned with lunar calendars. The festival commemorates the key events in the life of Lord Buddha, making it a spiritually significant time for prayers, pilgrimages, and acts of charity. Historically, monasteries acted as centers for organizing religious teachings, rituals, and community support, ensuring the festival remained central to spiritual life. Saga Dawa illustrates how Buddhism shaped local culture and moral values, promoting compassion, mindfulness, and ethical behavior. It also reflects the intertwining of cosmology, lunar cycles, and social practices in Himalayan societies.",
     rituals_practices: [
       "Lighting butter lamps in temples, monasteries, and homes to symbolize wisdom, enlightenment, and dispelling darkness from ignorance.",
@@ -82,7 +82,7 @@ const festivals = [
     id: 4,
     name: "Namsoong Festival",
     description: "Namsoong is a post-harvest festival celebrated with rituals, dances, and feasts. It honors the spirits of the land and expresses gratitude for agricultural abundance while fostering social bonds and community identity.",
-     image: ["/assets/festival1_1.jpg","/assets/festival1_2.jpg","/assets/festival1_3.jpg","/assets/festival1_4.jpg","/assets/festival1_5.jpg","/assets/festival1_6.jpg","/assets/festival1_7.jpg"],
+    image: ["/assets/Festival/Festival_4/festival4_1.jpg"],
     history_origins: "Namsoong dates back to ancient agrarian practices, where communities marked the end of the harvest season with offerings to deities and spirits. Its origins lie in both spiritual reverence and practical acknowledgment of the importance of agriculture. Over generations, Namsoong evolved to include elaborate dances, music, and community feasts, integrating folklore, storytelling, and moral lessons. The festival represents a connection between humans, nature, and the supernatural, emphasizing the cyclical rhythms of life. It also showcases the cultural ingenuity of rural societies, using celebration as a medium for education, bonding, and spiritual continuity.",
     rituals_practices: [
       "Harvest offerings made to local deities and ancestral spirits, symbolizing gratitude for protection, fertility, and prosperity.",
@@ -98,7 +98,7 @@ const festivals = [
     id: 5,
     name: "Losoong Festival",
     description: "Losoong is a harvest festival that marks the completion of the agricultural season. It celebrates community solidarity, gratitude for the harvest, and cultural preservation through dances, rituals, and feasts.",
-     image: ["/assets/festival1_1.jpg","/assets/festival1_2.jpg","/assets/festival1_3.jpg","/assets/festival1_4.jpg","/assets/festival1_5.jpg","/assets/festival1_6.jpg","/assets/festival1_7.jpg"],
+     image: ["/assets/Festival/Festival_5/festival5_1.jpg"],
     history_origins: "Losoong originated in agrarian communities as a way to honor the gods and ancestors for bountiful harvests. It combines ritual offerings, ceremonial dances, and social celebrations. Over centuries, the festival incorporated Tibetan Buddhist elements, local folklore, and artistic expressions, making it a multifaceted cultural event. Losoong reflects the cyclical nature of agrarian life, emphasizing gratitude, protection, and renewal. Monasteries and village councils historically played pivotal roles in coordinating rituals, preserving oral histories, and reinforcing social cohesion.",
     rituals_practices: [
       "Mask dances performed by skilled artists representing protective deities and ancestral spirits.",
@@ -114,7 +114,7 @@ const festivals = [
     id: 6,
     name: "Phang Lhabsol",
     description: "Phang Lhabsol is a religious festival honoring the protective deity of Mount Kanchenjunga. It merges mythology, spirituality, and community participation in elaborate rituals, dances, and prayers.",
-     image: ["/assets/festival1_1.jpg","/assets/festival1_2.jpg","/assets/festival1_3.jpg","/assets/festival1_4.jpg","/assets/festival1_5.jpg","/assets/festival1_6.jpg","/assets/festival1_7.jpg"],
+     image: ["/assets/Festival/Festival_6/festival6_1.jpg"],
     history_origins: "Phang Lhabsol has ancient origins, rooted in the belief that Mount Kanchenjunga protects the land and people. Early communities observed seasonal rites to align with natural cycles and seek blessings from the mountain deity. Over centuries, Buddhist teachings and local folklore merged, creating elaborate ceremonies that include dances, offerings, and symbolic acts of devotion. The festival illustrates the interplay of spirituality, mythology, and community governance. It also highlights the cultural importance of natural landmarks, showing how people historically integrated environment, religion, and social life into festivals.",
     rituals_practices: [
       "Sacred dances narrating mythological tales, the protection of the kingdom, and divine interventions.",

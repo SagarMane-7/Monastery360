@@ -14,7 +14,7 @@ body {
 .background{
     height: 425px;
     width: 100%;
-    background-image: url(/assets/Sunrise.jpg);
+    background-image: url(/assets/History/Sunrise.jpg);
     background-size: cover;
 }
 

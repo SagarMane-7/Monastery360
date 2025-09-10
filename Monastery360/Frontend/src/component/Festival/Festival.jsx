@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Header from '../Header/Header.jsx';
 import Footer from '../Footer/Footer.jsx';
+import Button from '../Button/Button.jsx';
 import styles from '../Festival/Festival.module.css';
 
 const Festival = () => {
@@ -64,6 +65,12 @@ const Festival = () => {
         <div style={{width:"1300px"}}>
           <p style={{ fontSize: "26px", color: "#008080", fontWeight: "700", paddingTop: "25px" }}>Cultural Significance</p>
           <p>{festival.cultural_significance}</p>
+        </div>
+      </section>
+
+      <section>
+        <div className={styles.morefestival}>
+          <Button style={{ width: "350px", fontFamily: "Karla,sans-serif" }}>Explore More Festivals</Button>
         </div>
       </section>
 

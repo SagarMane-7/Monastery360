@@ -22,23 +22,23 @@ const History = () => {
         <p style={{ color: "#008080", fontWeight: "700", textAlign: "center", fontSize: "26px" }}>Journey Through Sikkim’s Spiritual History</p>
         <div className={styles.timeline1}>
           <p style={{ height: "175px", width: "525px", color: "#008080", fontWeight: "700", paddingRight: "25px" }}>8th Century – Guru Padmasambhava’s Arrival<p style={{ color: "#454545", fontWeight: "400" }}>Buddhism is introduced, laying the foundation of Sikkim’s spiritual heritage. Lamas begin establishing meditation centers that evolve into monasteries.</p></p>
-          <img src="./assets/buddha.png" alt="Timeline" style={{ height: "80px", width: "80px" }}></img>
+          <img src="./assets/History/buddha.png" alt="Timeline" style={{ height: "80px", width: "80px" }}></img>
         </div>
         <div className={styles.timeline2}>
-          <img src="./assets/crown.png" alt="Timeline" style={{ height: "80px", width: "80px" }}></img>
+          <img src="./assets/History/crown.png" alt="Timeline" style={{ height: "80px", width: "80px" }}></img>
           <p style={{ height: "175px", width: "525px", paddingLeft: "25px", color: "#008080", fontWeight: "700" }}>1642 – Namgyal Dynasty Established<p style={{ color: "#454545", fontWeight: "400" }}>Phuntsog Namgyal becomes the first Chogyal (king) of Sikkim. Buddhism is declared the state religion, leading to the expansion of monasteries and royal patronage.</p></p>
         </div>
         <div className={styles.timeline1}>
           <p style={{ height: "175px", width: "525px", color: "#008080", fontWeight: "700", paddingRight: "25px" }}>1700s – Founding of Major Monasteries<p style={{ color: "#454545", fontWeight: "400" }}>Prominent monasteries like Pemayangtse (1670s) are established as royal monasteries. Rumtek Monastery rises as the seat of the Karmapa, becoming an international hub of Tibetan Buddhism.</p></p>
-          <img src="./assets/monastery.png" alt="Timeline" style={{ height: "80px", width: "80px" }}></img>
+          <img src="./assets/History/monastery.png" alt="Timeline" style={{ height: "80px", width: "80px" }}></img>
         </div>
         <div className={styles.timeline2}>
-          <img src="./assets/colonial.png" alt="Timeline" style={{ height: "80px", width: "90px" }}></img>
+          <img src="./assets/History/colonial.png" alt="Timeline" style={{ height: "80px", width: "90px" }}></img>
           <p style={{ height: "175px", width: "525px", paddingLeft: "25px", color: "#008080", fontWeight: "700" }}>19th Century – Colonial Encounters<p style={{ color: "#454545", fontWeight: "400" }}>British explorers, scholars, and missionaries document Sikkim’s monasteries, bringing global awareness. This sparks preservation efforts but also introduces challenges from modernization.</p></p>
         </div>
         <div className={styles.timeline1}>
           <p style={{ height: "175px", width: "525px", color: "#008080", fontWeight: "700", paddingRight: "25px" }}>Modern Era – Preservation & Digitalization<p style={{ color: "#454545", fontWeight: "400" }}>Initiatives like Monastery360 and local heritage projects work to digitize manuscripts, preserve murals, and make monastery history accessible worldwide.</p></p>
-          <img src="./assets/digital.png" alt="Timeline" style={{ height: "80px", width: "80px" }}></img>
+          <img src="./assets/History/digital.png" alt="Timeline" style={{ height: "80px", width: "80px" }}></img>
         </div>
       </section>
       <section className={styles.legacysection}>

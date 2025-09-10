@@ -12,10 +12,13 @@ body {
 }
 
 .background{
-    height: 525px;
-    background-image: url(/assets/listbackground.png);
+    height: 475px;
+    background-image: url(/assets/Monastery/listbackground.png);
     background-size: cover;
     margin-bottom: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
 }
 
 .monastery{

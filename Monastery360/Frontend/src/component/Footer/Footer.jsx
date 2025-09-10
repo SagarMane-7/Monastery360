@@ -9,8 +9,8 @@ function Footer() {
     <div>
       <section className={styles.footer}>
         <div style={{ paddingTop: "75px" }}>
-          <img src="/assets/sikkimtourism-logo 1.png" alt="Logo2" className={styles.logo2} he></img>
-          <img src="/assets/sk-logo-lg 1.png" alt="Logo3" className={styles.logo3}></img>
+          <img src="/assets/Home/sikkimtourismlogo.png" alt="Logo2" className={styles.logo2} he></img>
+          <img src="/assets/Home/sikkimlogo.png" alt="Logo3" className={styles.logo3}></img>
         </div>
         <div>
           <p style={{textAlign:"center"}}>Contact Info</p>

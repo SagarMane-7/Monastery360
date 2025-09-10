@@ -37,27 +37,27 @@ function Home() {
 
       <section className={styles.features} style={{ color: "#454545", fontSize: "22px", fontWeight: "400" }}>
         <div className={styles.featureslogo}>
-          <img src="/assets/monastery.png" style={{ height: "50px", width: "50px" }}></img>
+          <img src="/assets/Home/monastery.png" style={{ height: "50px", width: "50px" }}></img>
           <p>200+ Monasteries</p>
         </div>
         <div className={styles.featureslogo}>
-          <img src="/assets/3d-modeling.png" style={{ height: "50px", width: "50px" }}></img>
+          <img src="/assets//Home/3d-modeling.png" style={{ height: "50px", width: "50px" }}></img>
           <p>360° Virtual Tours</p>
         </div>
         <div className={styles.featureslogo}>
-          <img src="/assets/audio-guide.png" style={{ height: "50px", width: "50px" }}></img>
+          <img src="/assets//Home/audio-guide.png" style={{ height: "50px", width: "50px" }}></img>
           <p>Smart Audio Guides</p>
         </div>
         <div className={styles.featureslogo}>
-          <img src="/assets/translation.png" style={{ height: "50px", width: "50px" }}></img>
+          <img src="/assets//Home/translation.png" style={{ height: "50px", width: "50px" }}></img>
           <p>5 Languages</p>
         </div>
         <div className={styles.featureslogo}>
-          <img src="/assets/calendar.png" style={{ height: "50px", width: "50px" }}></img>
+          <img src="/assets//Home/calendar.png" style={{ height: "50px", width: "50px" }}></img>
           <p>Cultural Calendar</p>
         </div>
         <div className={styles.featureslogo}>
-          <img src="/assets/scroll.png" style={{ height: "50px", width: "50px" }}></img>
+          <img src="/assets//Home/scroll.png" style={{ height: "50px", width: "50px" }}></img>
           <p>1000+ Manuscripts</p>
         </div>
       </section>
@@ -97,7 +97,7 @@ function Home() {
       <section>
         <div className={styles.timeline}>
           <p style={{ fontSize: "26px", fontWeight: "700", color: "#008080", textAlign: "center" }}>Best Time to Visit</p>
-          <img src="./assets/Timeline.png" alt="Timeline"></img>
+          <img src="./assets//Home/Timeline.png" alt="Timeline"></img>
           <p style={{ textAlign: "center", color: "#454545", fontStyle: "italic", fontWeight: "500", fontSize: "22px" }}>Spring and autumn offer the best experience. Explore festivals, rituals, and cultural celebrations year-round</p>
         </div>
       </section>

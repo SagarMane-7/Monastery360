@@ -14,7 +14,7 @@ body {
 .background{
     height: 425px; 
     width: 100%;
-    background-image: url(/assets/HomepageBackground.png);
+    background-image: url(/assets/Home/HomepageBackground.png);
     background-size: cover;          
 }
 
