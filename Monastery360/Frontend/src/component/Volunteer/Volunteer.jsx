@@ -39,7 +39,7 @@ const Volunteer = () => {
             {volunteermonasteries.map((volunteermonastery) => {
               return (
                 <div key={volunteermonastery.id} className={styles.monasteryCard} style={{width:"400px"}}>
-                  <img src={volunteermonastery.image} alt={volunteermonastery.name} style={{ height: "300px", width: "400px", borderRadius: "15px" }} />
+                  <img src={`http://localhost:5000${volunteermonastery.image}`} alt={volunteermonastery.name} style={{ height: "300px", width: "400px", borderRadius: "15px" }} />
                   <p style={{ fontSize: "22px", fontWeight: "700", color: "#008080" }}>{volunteermonastery.name}</p>
                   <p style={{ fontSize: "22px", fontWeight: "400", color: "#454545" }}>{volunteermonastery.location}<br/>{volunteermonastery.activities}<br/>{volunteermonastery.phone}<br/>{volunteermonastery.email} </p>
                 </div>

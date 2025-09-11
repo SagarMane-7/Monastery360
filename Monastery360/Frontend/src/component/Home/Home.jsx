@@ -86,7 +86,7 @@ function Home() {
             {monasteries.slice(0, 4).map((monastery) => {
               return (
                 <div key={monastery.id} className={styles.monasteryCard}>
-                  <img src={monastery.image} alt={monastery.name} style={{ height: "300px", width: "300px", borderRadius: "15px" }} />
+                  <img src={`http://localhost:5000${monastery.image}`} alt={monastery.name} style={{ height: "300px", width: "300px", borderRadius: "15px" }} />
                   <p style={{ fontSize: "22px", fontWeight: "700", color: "#008080" }}>{monastery.name}</p>
                   <p style={{ fontSize: "22px", fontWeight: "400", color: "#454545" }}>{monastery.location}</p>
                 </div>
