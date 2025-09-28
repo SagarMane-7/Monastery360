@@ -57,7 +57,6 @@ export default function Chatbot() {
         <img src="/assets/Home/logo.png" style={{height:"60px",width:"60px"}}></img>
       </div>
 
-      {/* Chat window */}
       {isOpen && (
         <div
           style={{
@@ -76,7 +75,6 @@ export default function Chatbot() {
             fontSize: "18px",
           }}
         >
-          {/* Optional image at the top */}
           
           <div
             style={{

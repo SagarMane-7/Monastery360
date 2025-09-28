@@ -4,7 +4,7 @@ import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import axios from "axios";
 import styles from "./Map_API.module.css"
-// Custom icons
+
 const monasteryIcon = new L.Icon({
   iconUrl: "/assets/Home/monastery.png",
   iconSize: [30, 30],
@@ -13,7 +13,7 @@ const monasteryIcon = new L.Icon({
 });
 
 const hotelIcon = new L.Icon({
-  iconUrl: "/assets/Home/quarantine.png", // Use your home stay icon
+  iconUrl: "/assets/Home/quarantine.png",
   iconSize: [30, 30],
   iconAnchor: [15, 30],
   popupAnchor: [0, -30],
@@ -26,7 +26,7 @@ const trekkingIcon = new L.Icon({
   popupAnchor: [0, -30],
 });
 
-// Fit bounds helper component
+
 function FitBounds({ bounds }) {
   const map = useMap();
   useEffect(() => {
@@ -37,7 +37,7 @@ function FitBounds({ bounds }) {
   return null;
 }
 
-// Small helper component for showing icon in popup
+
 const MarkerIcon = ({ type }) => {
   return (
     <img
@@ -64,7 +64,6 @@ export default function MapComponent() {
   const [distance, setDistance] = useState(null);
   const [bounds, setBounds] = useState(null);
 
-  // Fetch monasteries from API
   useEffect(() => {
     axios
       .get("http://localhost:5000/api/monasteries")
@@ -72,7 +71,6 @@ export default function MapComponent() {
       .catch((err) => console.error("Error fetching monasteries:", err));
   }, []);
 
-  // Fetch nearby places when monastery is selected
   useEffect(() => {
     if (!selectedMonastery) return;
 
@@ -103,7 +101,7 @@ export default function MapComponent() {
     setDistance(calculateDistance(start, end).toFixed(2));
 
     if (mapRef.current) {
-      mapRef.current.fitBounds([start, end], { padding: [50, 50], maxZoom: 17 }); // zoom 17
+      mapRef.current.fitBounds([start, end], { padding: [50, 50], maxZoom: 17 }); 
     }
   };
 
@@ -117,7 +115,6 @@ export default function MapComponent() {
       >
         <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
 
-        {/* Monastery markers */}
         {Array.isArray(monasteries) &&
           monasteries.map((m) => (
             <Marker
@@ -161,7 +158,6 @@ export default function MapComponent() {
             </Marker>
           ))}
 
-        {/* Nearby places markers */}
         {Array.isArray(nearbyPlaces) &&
           nearbyPlaces.map((p) => (
             <Marker
@@ -173,10 +169,8 @@ export default function MapComponent() {
             </Marker>
           ))}
 
-        {/* Draw route */}
         {route.length === 2 && <Polyline positions={route} color="blue" />}
 
-        {/* Fit map bounds */}
         {bounds && <FitBounds bounds={bounds} />}
       </MapContainer>
     </div>

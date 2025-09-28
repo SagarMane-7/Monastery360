@@ -9,7 +9,7 @@ const Virtual_Tour = () => {
     const audioEl = document.querySelector("#chant");
     const infoPanel = document.getElementById("infoPanel");
 
-    // Audio on first click
+   
     scene.addEventListener(
       "click",
       () => {
@@ -20,7 +20,7 @@ const Virtual_Tour = () => {
       { once: true }
     );
 
-    // Hotspots
+
     const hotspots = scene.querySelectorAll(".clickable");
     hotspots.forEach((h) =>
       h.addEventListener("click", () => {

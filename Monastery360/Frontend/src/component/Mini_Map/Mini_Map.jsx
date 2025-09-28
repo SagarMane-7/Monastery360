@@ -5,7 +5,7 @@ import "leaflet/dist/leaflet.css";
 import axios from "axios";
 import styles from "./Mini_Map.module.css"
 
-// Custom icons
+
 const monasteryIcon = new L.Icon({
   iconUrl: "/assets/Home/monastery.png",
   iconSize: [30, 30],
@@ -27,7 +27,7 @@ const trekkingIcon = new L.Icon({
   popupAnchor: [0, -30],
 });
 
-// Fit bounds helper component
+
 function FitBounds({ bounds }) {
   const map = useMap();
   useEffect(() => {
@@ -38,7 +38,7 @@ function FitBounds({ bounds }) {
   return null;
 }
 
-// Small helper component for showing icon in popup
+
 const MarkerIcon = ({ type }) => (
   <img
     src={
@@ -62,20 +62,20 @@ export default function MiniMap() {
   const [distance, setDistance] = useState(null);
   const [bounds, setBounds] = useState(null);
 
-  // Fetch only the first monastery
+ 
   useEffect(() => {
     axios
       .get("http://localhost:5000/api/monasteries")
       .then((res) => {
         if (res.data && res.data.length > 0) {
-          setMonastery(res.data[0]); // first monastery only
+          setMonastery(res.data[0]); 
           setBounds(L.latLngBounds([[Number(res.data[0].lat), Number(res.data[0].lng)]]));
         }
       })
       .catch((err) => console.error("Error fetching monastery:", err));
   }, []);
 
-  // Fetch nearby places for the first monastery
+ 
   useEffect(() => {
     if (!monastery) return;
 
@@ -86,7 +86,7 @@ export default function MiniMap() {
   }, [monastery]);
 
   const calculateDistance = (start, end) => {
-    const R = 6371; // km
+    const R = 6371;
     const dLat = ((end[0] - start[0]) * Math.PI) / 180;
     const dLon = ((end[1] - start[1]) * Math.PI) / 180;
     const a =
@@ -122,7 +122,6 @@ export default function MiniMap() {
       >
         <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
 
-        {/* First monastery marker */}
         <Marker
           position={[Number(monastery.lat), Number(monastery.lng)]}
           icon={monasteryIcon}
@@ -146,7 +145,6 @@ export default function MiniMap() {
           </Popup>
         </Marker>
 
-        {/* Nearby places markers */}
         {nearbyPlaces.map((p) => (
           <Marker
             key={p.id}
@@ -157,10 +155,8 @@ export default function MiniMap() {
           </Marker>
         ))}
 
-        {/* Draw route */}
         {route.length === 2 && <Polyline positions={route} color="blue" />}
 
-        {/* Fit map bounds */}
         {bounds && <FitBounds bounds={bounds} />}
       </MapContainer>
     </div>
