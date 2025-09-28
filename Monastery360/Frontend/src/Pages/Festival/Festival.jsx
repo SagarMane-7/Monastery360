@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from "react-router-dom";
 import { Link } from 'react-router-dom';
-import Header from '../Header/Header.jsx';
-import Footer from '../Footer/Footer.jsx';
-import Button from '../Button/Button.jsx';
-import styles from '../Festival/Festival.module.css';
+import Header from '../../component/Header/Header.jsx';
+import Footer from '../../component/Footer/Footer.jsx';
+import Button from '../../component/Button/Button.jsx';
+import styles from './Festival.module.css';
 
 function Festival() {
   const { name } = useParams();

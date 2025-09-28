@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styles from "./Volunteer.module.css";
-import Header from '../Header/Header';
-import Footer from '../Footer/Footer';
+import Header from '../../component/Header/Header';
+import Footer from '../../component/Footer/Footer';
 
 
 const Volunteer = () => {

@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './History.module.css';
-import Header from '../Header/Header'
-import Footer from '../Footer/Footer'
-import Button from '../Button/Button';
+import Header from '../../component/Header/Header'
+import Footer from '../../component/Footer/Footer'
+import Button from '../../component/Button/Button';
 
 
 const History = () => {

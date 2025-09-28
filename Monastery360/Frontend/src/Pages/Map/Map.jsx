@@ -1,8 +1,8 @@
 import React from 'react'
 import styles from './Map.module.css';
-import Header from '../Header/Header';
-import Footer from '../Footer/Footer';
-import MapComponent from '../Map_API/Map_API';
+import Header from '../../component/Header/Header';
+import Footer from '../../component/Footer/Footer';
+import MapComponent from '../../component/Map_API/Map_API';
 
 const Map = () => {
   return (

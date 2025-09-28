@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import Header from '../Header/Header.jsx';
-import Footer from '../Footer/Footer.jsx';
+import Header from '../../component/Header/Header.jsx';
+import Footer from '../../component/Footer/Footer.jsx';
 import styles from '../List_of_Festivals/List_of_Festivals.module.css'
 
 

@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation } from "react-router-dom";
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
-import Home from './component/Home/Home.jsx';
-import History from './component/History/History.jsx';
-import { List_of_Monasteries } from './component/List_of_Monasteries/List_of_Monasteries.jsx';
-import List_of_Festivals from './component/List_of_Festivals/List_of_Festivals.jsx';
-import Festival from './component/Festival/Festival.jsx';
-import Map from './component/Map/Map.jsx';
-import Volunteer from './component/Volunteer/Volunteer.jsx';
+import Home from './Pages/Home/Home.jsx';
+import History from './Pages/History/History.jsx';
+import { List_of_Monasteries } from './Pages/List_of_Monasteries/List_of_Monasteries.jsx';
+import List_of_Festivals from './Pages/List_of_Festivals/List_of_Festivals.jsx';
+import Festival from './Pages/Festival/Festival.jsx';
+import Map from './Pages/Map/Map.jsx';
+import Volunteer from './Pages/Volunteer/Volunteer.jsx';
 import Chatbot from './component/Chatbot/Chatbot.jsx';
-import Specific_Monastery from './component/Specific_Monastery/Specific_Monastery.jsx';
+import Specific_Monastery from './Pages/Specific_Monastery/Specific_Monastery.jsx';
 
 
 function ScrollToTop() {

@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Link } from 'react-router-dom';
-import Header from '../Header/Header.jsx';
-import Footer from '../Footer/Footer.jsx';
+import Header from '../../component/Header/Header.jsx';
+import Footer from '../../component/Footer/Footer.jsx';
 import styles from './Home.module.css';
-import Button from "../Button/Button";
-import MapComponentHome from "../Map_API_Home/Map_Home.jsx";
+import Button from "../../component/Button/Button.jsx";
+import MapComponentHome from "../../component/Map_API_Home/Map_Home.jsx";
 
 function Home() {
 

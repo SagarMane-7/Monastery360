@@ -1,11 +1,11 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { useParams } from "react-router-dom";
 import { Link } from 'react-router-dom';
-import Header from '../Header/Header.jsx';
-import Footer from '../Footer/Footer.jsx';
+import Header from '../../component/Header/Header.jsx';
+import Footer from '../../component/Footer/Footer.jsx';
 import styles from './Specific_Monastery.module.css';
-import Virtual_Tour from '../Virtual_Tour/Virtual_Tour.jsx';
-import MiniMap from '../Mini_Map/Mini_Map.jsx';
+import Virtual_Tour from '../../component/Virtual_Tour/Virtual_Tour.jsx';
+import MiniMap from '../../component/Mini_Map/Mini_Map.jsx';
 
 
 const Specific_Monastery = () => {
