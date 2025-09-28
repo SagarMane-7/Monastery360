@@ -8,6 +8,8 @@ import List_of_Festivals from './component/List_of_Festivals/List_of_Festivals.j
 import Festival from './component/Festival/Festival.jsx';
 import Map from './component/Map/Map.jsx';
 import Volunteer from './component/Volunteer/Volunteer.jsx';
+import Chatbot from './component/Chatbot/Chatbot.jsx';
+import Specific_Monastery from './component/Specific_Monastery/Specific_Monastery.jsx';
 
 
 function ScrollToTop() {
@@ -29,16 +31,14 @@ function App() {
     <Routes>
       <Route path='/' element={<Home/>}  />
       <Route path='/monasteries' element={<List_of_Monasteries/>} />
+      <Route path='/monasteries/:name' element={<Specific_Monastery/>}/>
       <Route path='/festivals' element={<List_of_Festivals/>} />
       <Route path='/festivals/:name' element={<Festival/>} />
       <Route path='/volunteer' element={<Volunteer/>} />
       <Route path='/history' element={<History/>} />
       <Route path='/map' element={<Map/>} />
-    
-   
     </Routes>
-
-
+    <Chatbot/>
     </BrowserRouter>
   );
 }

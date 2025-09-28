@@ -4,7 +4,7 @@ import Header from '../Header/Header.jsx';
 import Footer from '../Footer/Footer.jsx';
 import styles from './Home.module.css';
 import Button from "../Button/Button";
-import MapComponent from "../Map_API/Map_API.jsx";
+import MapComponentHome from "../Map_API_Home/Map_Home.jsx";
 
 function Home() {
 
@@ -28,7 +28,7 @@ function Home() {
             <Button style={{ background: "none", fontFamily: "Karla,sans-serif" }}>Discover</Button>
           </Link>
           <h1 style={{ color: "#cc6e2e", fontFamily: "Karla,sans-serif" }}>|</h1>
-           <Link to='/festivals'>
+          <Link to='/festivals'>
             <Button style={{ background: "none", fontFamily: "Karla,sans-serif" }}>Festivals</Button>
           </Link>
           <h1 style={{ color: "#cc6e2e" }}>|</h1>
@@ -86,7 +86,9 @@ function Home() {
             {monasteries.slice(0, 4).map((monastery) => {
               return (
                 <div key={monastery.id} className={styles.monasteryCard}>
-                  <img src={`http://localhost:5000${monastery.image}`} alt={monastery.name} style={{ height: "300px", width: "300px", borderRadius: "15px" }} />
+                  <Link to={`/monasteries/${encodeURIComponent(monastery.name)}`}>
+                  <img src={`http://localhost:5000${monastery.image[0]}`} alt={monastery.name} style={{ height: "300px", width: "300px", borderRadius: "15px" }} />
+                  </Link>
                   <p style={{ fontSize: "22px", fontWeight: "700", color: "#008080" }}>{monastery.name}</p>
                   <p style={{ fontSize: "22px", fontWeight: "400", color: "#454545" }}>{monastery.location}</p>
                 </div>
@@ -102,10 +104,10 @@ function Home() {
       </section>
       <section>
         <div className={styles.map}>
-          <MapComponent monasteries={monasteries} />
-          <Link to='/map'>       
-           <Button style={{ fontFamily: "Karla,sans-serif", marginTop:"50px" }} >Open Full Map</Button>
-           </Link>  
+          <MapComponentHome monasteries={monasteries} />
+          <Link to='/map'>
+            <Button style={{ fontFamily: "Karla,sans-serif", marginTop: "50px" }} >Open Full Map</Button>
+          </Link>
         </div>
       </section>
 

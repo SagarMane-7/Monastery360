@@ -19,7 +19,7 @@ const Map = () => {
       </p>
       
       <div className={styles.map}>
-        <MapComponent className={styles.mapBox}/>
+        <MapComponent className={styles.mapBox} />
       </div>
 
       <div style={{textAlign:'center', marginTop:'20px'}}>

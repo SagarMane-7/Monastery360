@@ -1,48 +1,184 @@
-import React, { useState } from "react";
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import React, { useState, useRef, useEffect } from "react";
+import { MapContainer, TileLayer, Marker, Popup, Polyline, useMap } from "react-leaflet";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
-import styles from './Map_API.module.css';
+import axios from "axios";
+import styles from "./Map_API.module.css"
+// Custom icons
+const monasteryIcon = new L.Icon({
+  iconUrl: "/assets/Home/monastery.png",
+  iconSize: [30, 30],
+  iconAnchor: [15, 30],
+  popupAnchor: [0, -30],
+});
 
-const defaultCenter = [27.5, 88.5];
+const hotelIcon = new L.Icon({
+  iconUrl: "/assets/Home/quarantine.png", // Use your home stay icon
+  iconSize: [30, 30],
+  iconAnchor: [15, 30],
+  popupAnchor: [0, -30],
+});
 
-function MapComponent({ monasteries = [] }) { 
-  const [selectedMarker, setSelectedMarker] = useState(null);
+const trekkingIcon = new L.Icon({
+  iconUrl: "/assets/Home/trekking.png",
+  iconSize: [30, 30],
+  iconAnchor: [15, 30],
+  popupAnchor: [0, -30],
+});
 
-  return (
-    <MapContainer
-      center={defaultCenter}
-      zoom={9}
-      scrollWheelZoom={false}
-      style={{ width: "1100px", height: "500px", borderRadius: "15px" }}
-    >
-      <TileLayer
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-      />
-
-      {monasteries.map((monastery) =>
-        monastery.lat && monastery.lng ? (
-          <Marker
-            key={monastery.id}
-            position={[Number(monastery.lat), Number(monastery.lng)]}
-            eventHandlers={{ click: () => setSelectedMarker(monastery) }}
-          />
-        ) : null
-      )}
-
-      {selectedMarker && (
-        <Popup
-          position={[Number(selectedMarker.lat), Number(selectedMarker.lng)]}
-          onClose={() => setSelectedMarker(null)}
-        >
-          <div>
-            <h3 style={{ margin: 0 }}>{selectedMarker.name}</h3>
-            {selectedMarker.description && <p>{selectedMarker.description}</p>}
-          </div>
-        </Popup>
-      )}
-    </MapContainer>
-  );
+// Fit bounds helper component
+function FitBounds({ bounds }) {
+  const map = useMap();
+  useEffect(() => {
+    if (bounds) {
+      map.fitBounds(bounds, { padding: [50, 50], maxZoom: 17 });
+    }
+  }, [bounds, map]);
+  return null;
 }
 
-export default MapComponent;
+// Small helper component for showing icon in popup
+const MarkerIcon = ({ type }) => {
+  return (
+    <img
+      src={
+        type === "Hotel"
+          ? "/assets/Home/quarantine.png"
+          : type === "Trekking"
+          ? "/assets/Home/trekking.png"
+          : "/assets/Home/monastery.png"
+      }
+      alt={type}
+      style={{ width: 20, height: 20, marginRight: 5 }}
+    />
+  );
+};
+
+export default function MapComponent() {
+  const mapRef = useRef(null);
+
+  const [monasteries, setMonasteries] = useState([]);
+  const [nearbyPlaces, setNearbyPlaces] = useState([]);
+  const [selectedMonastery, setSelectedMonastery] = useState(null);
+  const [route, setRoute] = useState([]);
+  const [distance, setDistance] = useState(null);
+  const [bounds, setBounds] = useState(null);
+
+  // Fetch monasteries from API
+  useEffect(() => {
+    axios
+      .get("http://localhost:5000/api/monasteries")
+      .then((res) => setMonasteries(res.data))
+      .catch((err) => console.error("Error fetching monasteries:", err));
+  }, []);
+
+  // Fetch nearby places when monastery is selected
+  useEffect(() => {
+    if (!selectedMonastery) return;
+
+    axios
+      .get(`http://localhost:5000/api/places?monasteryId=${selectedMonastery.id}`)
+      .then((res) => setNearbyPlaces(res.data))
+      .catch((err) => console.error("Error fetching nearby places:", err));
+  }, [selectedMonastery]);
+
+  const calculateDistance = (start, end) => {
+    const R = 6371; // km
+    const dLat = ((end[0] - start[0]) * Math.PI) / 180;
+    const dLon = ((end[1] - start[1]) * Math.PI) / 180;
+    const a =
+      Math.sin(dLat / 2) ** 2 +
+      Math.cos((start[0] * Math.PI) / 180) *
+        Math.cos((end[0] * Math.PI) / 180) *
+        Math.sin(dLon / 2) ** 2;
+    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    return R * c;
+  };
+
+  const showDirections = (place) => {
+    if (!selectedMonastery) return;
+    const start = [Number(selectedMonastery.lat), Number(selectedMonastery.lng)];
+    const end = [Number(place.lat), Number(place.lng)];
+    setRoute([start, end]);
+    setDistance(calculateDistance(start, end).toFixed(2));
+
+    if (mapRef.current) {
+      mapRef.current.fitBounds([start, end], { padding: [50, 50], maxZoom: 17 }); // zoom 17
+    }
+  };
+
+  return (
+    <div style={{ width: "80%", height: "600px" }}>
+      <MapContainer
+        center={[27.5, 88.5]}
+        zoom={10}
+        style={{ width: "100%", height: "100%" }}
+        whenCreated={(map) => (mapRef.current = map)}
+      >
+        <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+
+        {/* Monastery markers */}
+        {Array.isArray(monasteries) &&
+          monasteries.map((m) => (
+            <Marker
+              key={m.id}
+              position={[Number(m.lat), Number(m.lng)]}
+              icon={monasteryIcon}
+              eventHandlers={{
+                click: () => {
+                  setSelectedMonastery(m);
+                  setRoute([]);
+                  setDistance(null);
+                  if (mapRef.current) {
+                    mapRef.current.setView([Number(m.lat), Number(m.lng)], 15); // zoom 15
+                  }
+                  setBounds(L.latLngBounds([[Number(m.lat), Number(m.lng)]]));
+                },
+              }}
+            >
+              {selectedMonastery?.id === m.id && nearbyPlaces?.length > 0 && (
+                <Popup>
+                  <div>
+                    <h3>{m.name}</h3>
+                    <ul style={{ listStyle: "none", padding: 0 }}>
+                      {nearbyPlaces.map((p) => (
+                        <li key={p.id} style={{ marginBottom: 5 }}>
+                          <MarkerIcon type={p.type} />
+                          {p.name} ({p.type}){" "}
+                          <button
+                            onClick={() => showDirections(p)}
+                            style={{ marginLeft: 5 }}
+                          >
+                            Show Directions
+                          </button>
+                        </li>
+                      ))}
+                    </ul>
+                    {distance && <p>Distance: {distance} km</p>}
+                  </div>
+                </Popup>
+              )}
+            </Marker>
+          ))}
+
+        {/* Nearby places markers */}
+        {Array.isArray(nearbyPlaces) &&
+          nearbyPlaces.map((p) => (
+            <Marker
+              key={p.id}
+              position={[Number(p.lat), Number(p.lng)]}
+              icon={p.type === "Hotel" ? hotelIcon : trekkingIcon}
+            >
+              <Popup>{p.name}</Popup>
+            </Marker>
+          ))}
+
+        {/* Draw route */}
+        {route.length === 2 && <Polyline positions={route} color="blue" />}
+
+        {/* Fit map bounds */}
+        {bounds && <FitBounds bounds={bounds} />}
+      </MapContainer>
+    </div>
+  );
+}

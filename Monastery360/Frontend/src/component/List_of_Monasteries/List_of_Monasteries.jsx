@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import Header from '../Header/Header.jsx';
 import Footer from '../Footer/Footer.jsx';
 import Button from "../Button/Button";
@@ -30,7 +31,9 @@ export const List_of_Monasteries = () => {
                         {monasteries.map((monastery) => {
                             return (
                                 <div key={monastery.id} className={styles.monasteryCard}>
-                                    <img src={`http://localhost:5000${monastery.image}`} alt={monastery.name} style={{ height: "300px", width: "400px", borderRadius: "15px" }} />
+                                    <Link to={`/monasteries/${encodeURIComponent(monastery.name)}`}>
+                                    <img src={`http://localhost:5000${monastery.image[0]}`} alt={monastery.name} style={{ height: "300px", width: "400px", borderRadius: "15px" }} />
+                                    </Link>
                                     <p style={{ fontSize: "22px", fontWeight: "700", color: "#008080" }}>{monastery.name}</p>
                                     <p style={{ fontSize: "22px", fontWeight: "400", color: "#454545" }}>{monastery.location}</p>
                                 </div>
