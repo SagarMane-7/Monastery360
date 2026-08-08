@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;500;700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #454545;
+    background-color: #FFFFFF;
+    font-family: 'Karla', sans-serif;
+    font-size: 22px;
+    line-height: 150%;
+}
+
+.background{
+    height: 425px;
+    width: 100%;
+    background-image: url(/assets/History/Sunrise.jpg);
+    background-size: cover;
+}
+
+.history{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.information{
+    width: 1300px;
+    text-align: center;
+    
+}
+
+.legacysection{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+}
+
+.legacy{
+    width: 1300px;
+    text-align: center;
+}
+
+.fact{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+}
+
+.timeline1{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: end;
+    margin-right: calc(50% - 30px);
+    text-align: center;
+}
+
+.timeline2{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-left: calc(50% - 50px);
+    text-align: center;
+}
+
+.journey{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-bottom: 25px;
+}
